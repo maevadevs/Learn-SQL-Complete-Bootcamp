@@ -1,4 +1,8 @@
-# Course Curriculum
+# About
+
+These are my notes from the Complete SQL Bootcamp course.
+
+## Course Curriculum
 
 - Postgre SQL Installation
 - Databases and Table Basics
