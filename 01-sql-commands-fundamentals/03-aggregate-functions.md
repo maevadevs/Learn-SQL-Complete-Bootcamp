@@ -1,7 +1,13 @@
 # AGGREGATE FUNCTIONS
 
 - Takes multiple data and combine them into a single value, depending on the function
-- Used a lot with the `GROUP BY` statement
+- Used a lot with the `GROUP BY` statements
+- List of Aggregate Functions studied here:
+  - `count()`
+  - `avg()`
+  - `min()`
+  - `max()`
+  - `sum()`
 
 ## `COUNT()`
 

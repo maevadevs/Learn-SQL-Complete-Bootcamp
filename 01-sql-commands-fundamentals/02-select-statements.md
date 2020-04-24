@@ -10,6 +10,7 @@
 - `between`
 - `in`
 - `like`
+- `ilike`
 
 ## `SELECT`
 

@@ -1,13 +1,13 @@
 # About
 
-These are my notes from the Complete SQL Bootcamp course.
+These are my notes from the Complete SQL Bootcamp course. This course is about SQL and its implementation in PostgreSQL.
 
 ## Course Curriculum
 
 - Postgre SQL Installation
 - Databases and Table Basics
   - SQL Statement Fundamentals
-  - GROUP BY Clauses
+  - `GROUP BY` Clauses
   - Assessment Test 1
 - Joins
 - Advanced SQL
