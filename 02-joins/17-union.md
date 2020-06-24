@@ -1,4 +1,4 @@
-# UNION
+# `UNION`
 
 - Combines the result sets of 2 or more `SELECT` statements into a single result set
 - NOTE: Removes all duplicate rows (unless using `UNION ALL`)
@@ -15,7 +15,7 @@ SELECT columnA, columnB, columnC
 FROM table2;
 ```
 
-## REQUIREMENTS FOR UNION
+## Requirements For `UNION`
 
 - Both queries must return the same number of columns
 - The corresponding columns in each query must have compatible types 

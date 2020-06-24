@@ -19,6 +19,11 @@
 1. Specify the Main table (`table_A`) Alias can be used
 1. Specify the table that joins the Main table (`table_B`) Alias can be used
 
+```sql
+SELECT tA.pk, tA.colA1, tB.pk, tB.colB1
+FROM table_A as tA NATURAL [INNER, LEFT, RIGHT] JOIN table_B as tB;
+```
+
 ## Pseudo-Code Interpretation of CROSS JOIN
 
 ```python
@@ -50,10 +55,7 @@ ORDER BY "Total Amount" DESC
 LIMIT 10;
 ```
 
-```sql
-SELECT tA.pk, tA.colA1, tB.pk, tB.colB1
-FROM table_A as tA NATURAL [INNER, LEFT, RIGHT] JOIN table_B as tB;
-```
+## Natural Join Example
 
 ```visual
 table_a             table_b
@@ -66,14 +68,14 @@ id  name            id  name
 4   Spaghetti       4   Ninja
 ```
 
-## Query
+### Query
 
 ```sql
 SELECT *
 FROM table_a NATURAL JOIN table_b;
 ```
 
-## Result
+### Result
 
 ```visual
 a.id  a.name    b.id  b.name

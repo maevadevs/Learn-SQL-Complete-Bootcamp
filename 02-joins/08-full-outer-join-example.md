@@ -6,9 +6,15 @@
 ## Code Steps
 
 1. Specify the columns from both tables (specify table names to avoid ambiguity): If it is obvious and there is no ambiguity, the table names can be dropped
-1. Specify the Main table (`table_A`) Alias can be used
-1. Specify the table that joins the Main table (`table_B`) Alias can be used
+1. Specify the Main table (`tA`) Alias can be used
+1. Specify the table that joins the Main table (`tB`) Alias can be used
 1. Add a join condition `ON`
+
+```sql
+SELECT tA.pk, tA.colA1, tB.pk, tB.colB1
+FROM table_A as tA FULL OUTER JOIN table_B as tB
+ON table_A.pk = table_B.fk;
+```
 
 ## Pseudo-Code Interpretation of FULL OUTER JOIN
 
@@ -47,10 +53,7 @@ ORDER BY "Total Amount" DESC
 LIMIT 10;
 ```
 
-```sql
-SELECT tA.pk, tA.colA1, tB.pk, tB.colB1
-FROM table_A as tA FULL OUTER JOIN table_B as tB
-ON table_A.pk = table_B.fk;
+## Full Outer Join Example
 
 ```visual
 table_a             table_b
@@ -63,7 +66,7 @@ id  name            id  name
 4   Spaghetti       4   Ninja
 ```
 
-## Query
+### Query
 
 ```sql
 SELECT *
@@ -71,7 +74,7 @@ FROM table_a FULL OUTER JOIN table_b /* or just FULL JOIN */
 ON table_a.name = table_b.name;
 ```
 
-## Result
+### Result
 
 ```visual
 a.id  a.name    b.id  b.name

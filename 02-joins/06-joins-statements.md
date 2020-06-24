@@ -25,7 +25,7 @@
 ## `AS`
 
 - Allows to rename columns or table selection with an alias
-- Cannot be used when using `HAVING`: SQL will rename the column, after the `HAVING` operation, but before the `ORDER BY` operation
+- Cannot be used when using `HAVING` or `WHERE`: SQL will rename the column, after the `HAVING` operation, but before the `ORDER BY` operation
 
 ```sql
 SELECT column1 AS first_column, COUNT(column2) AS count_col2, SUM(column3) AS sum_col3

@@ -12,6 +12,13 @@
 1. Add a join condition `ON`
 1. Add a `WHERE` condition
 
+```sql
+SELECT tA.pk, tA.colA1, tB.pk, tB.colB1
+FROM table_A as tA FULL OUTER JOIN table_B as tB
+ON table_A.pk = table_B.fk
+WHERE condition;
+```
+
 ## Pseudo-Code Interpretation of LEFT OUTER JOIN with WHERE
 
 ```python
@@ -50,12 +57,7 @@ ORDER BY "Total Amount" DESC
 LIMIT 10;
 ```
 
-```sql
-SELECT tA.pk, tA.colA1, tB.pk, tB.colB1
-FROM table_A as tA FULL OUTER JOIN table_B as tB
-ON table_A.pk = table_B.fk
-WHERE condition;
-```
+## Full Outer Join with `Where` Example
 
 ```visual
 table_a             table_b
@@ -68,7 +70,7 @@ id  name            id  name
 4   Spaghetti       4   Ninja
 ```
 
-## Query
+### Query
 
 ```sql
 SELECT *
@@ -77,7 +79,7 @@ ON table_a.name = table_b.name
 WHERE table_a.id IS NULL OR table_b.id IS NULL;
 ```
 
-## Result
+### Result
 
 ```visual
 a.id  a.name    b.id  b.name

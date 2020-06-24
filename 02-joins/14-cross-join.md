@@ -1,6 +1,6 @@
 # `CROSS JOIN`
 
-- Produces the cartesian product of rows from both tables
+- Produces the cartesian product of rows from both tables by crossing everything
 - Returns the product of each rows from the left table matched one by one with each rows of the right table
 - It does not have a matching condition `ON`
 - BE CAREFUL: Cross Join can produce a very large dataset (n x m)
@@ -20,6 +20,12 @@ ON true;
 1. Specify the columns from both tables (specify table names to avoid ambiguity): If it is obvious and there is no ambiguity, the table names can be dropped
 1. Specify the Main table (`table_A`) Alias can be used
 1. Specify the table that joins the Main table (`table_B`) Alias can be used
+
+```sql
+SELECT tA.pk, tA.colA1, tB.pk, tB.colB1
+FROM table_A as tA CROSS JOIN table_B as tB
+WHERE condition;
+```
 
 ## Pseudo-Code Interpretation of CROSS JOIN
 
@@ -48,11 +54,7 @@ ORDER BY "Total Amount" DESC
 LIMIT 10;
 ```
 
-```sql
-SELECT tA.pk, tA.colA1, tB.pk, tB.colB1
-FROM table_A as tA CROSS JOIN table_B as tB
-WHERE condition;
-```
+## Cross Join Example
 
 ```visual
 table_a             table_b
@@ -65,14 +67,14 @@ id  name            id  name
 4   Spaghetti       4   Ninja
 ```
 
-## Query
+### Query
 
 ```sql
 SELECT *
 FROM table_a CROSS JOIN table_b;
 ```
 
-## Result
+### Result
 
 ```visual
 a.id  a.name    b.id  b.name

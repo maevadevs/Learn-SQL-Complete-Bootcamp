@@ -1,6 +1,7 @@
 # `RIGHT OUTER JOIN` or `RIGHT JOIN`
 
-- Returns everything from the right table
+- **A Right-Join is the exact same thing as a Left-Join with the tables switched around**
+- **Right-Table Priority**: Returns everything from the right table
 - Check for matches against the left table
   - If there are matches, add those cells from the left table to the matching cells of the right table
   - If there are no matches, replace the cell with `null`
@@ -11,6 +12,12 @@
 1. Specify the Main table (`table_A`) Alias can be used
 1. Specify the table that joins the Main table (`table_B`) Alias can be used
 1. Add a join condition `ON`
+
+```sql
+SELECT tA.pk, tA.colA1, tB.pk, tB.colB1
+FROM table_A as tA RIGHT OUTER JOIN table_B as tB
+ON table_A.pk = table_B.fk;
+```
 
 ## Pseudo-Code Interpretation of RIGHT OUTER JOIN
 
@@ -42,10 +49,7 @@ ORDER BY "Total Amount" DESC
 LIMIT 10;
 ```
 
-```sql
-SELECT tA.pk, tA.colA1, tB.pk, tB.colB1
-FROM table_A as tA RIGHT OUTER JOIN table_B as tB
-ON table_A.pk = table_B.fk;
+## Right Outer Join Example
 
 ```visual
 table_a             table_b
@@ -58,7 +62,7 @@ id  name            id  name
 4   Spaghetti       4   Ninja
 ```
 
-## Query
+### Query
 
 ```sql
 SELECT *
@@ -66,7 +70,7 @@ FROM table_a RIGHT OUTER JOIN table_b /* or just RIGHT JOIN */
 ON table_a.name = table_b.name;
 ```
 
-## Result
+### Result
 
 ```visual
 a.id  a.name    b.id  b.name

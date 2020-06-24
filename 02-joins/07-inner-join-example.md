@@ -62,7 +62,7 @@ id  name            id  name
 ### Query
 
 ```sql
-SELECT * 
+SELECT *
 FROM table_a JOIN table_b
 ON table_a.name = table_b.name;
 ```
