@@ -2,12 +2,14 @@
 
 - One of the most useful tool in SQL
 - Combines the rows returned by the `SELECT` statement into aggregate groups
+- We need to use a categorical column to perform the `GROUP BY` on
 - Returns a summary of the data based on the column and the aggregate function
 - Without aggregate function, it act as `SELECT DISTINCT`
 - For each group, we can apply an aggregate function
 - The `GROUP BY` column must appear in the `SELECT` clause or be used in an aggregate function
 - It is a good practice to always select the column that you are going to group by
 - We can also use `ORDER BY` after this clause
+- The `WHERE` clause must happen before `GROUP BY` if it exists
 
 ```sql
 SELECT column1, COUNT(column2) as count_col2, SUM(column3) as sum_col3

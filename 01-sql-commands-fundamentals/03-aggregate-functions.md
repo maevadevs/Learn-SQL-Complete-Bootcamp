@@ -8,20 +8,26 @@
   - `min()`
   - `max()`
   - `sum()`
+- Aggregate functions only happen in the `SELECT` and `HAVING` clauses
 
 ## `COUNT()`
 
 - Returns the number of input rows that match the condition
-- Note: It does not consider NULL values in the column
+- Note: It does not consider `NULL` values in the column
 - It is better to run it on the Primary Key
 
 ```sql
-SELECT COUNT(colum_name)
+SELECT COUNT(column_name)
 FROM table_name;
 ```
 
 ```sql
-SELECT COUNT(DISTINCT colum_name)
+SELECT COUNT(DISTINCT column_name)
+FROM table_name;
+```
+
+```sql
+SELECT COUNT(DISTINCT(column_name1, column_name1))
 FROM table_name;
 ```
 

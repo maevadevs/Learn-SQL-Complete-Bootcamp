@@ -39,33 +39,10 @@ SELECT DISTINCT column1, column2,...
 FROM table_name;
 ```
 
-## `SELECT WHERE`
-
-- Adding conditions to a SELECT statement
-- Filter the results returned from the SELECT statement
-
-```sql
-SELECT column1, column2,...
-FROM table_name
-WHERE condition;
-```
-
-### COMPARISON OPERATORS
-
-- `=`: Equal
-- `>`: Greater than
-- `<`: Less than
-- `>=`: Greater than or equal
-- `<=`: Less than or equal
-- `!=`: Not equal
-- `<>`: Not equal
-- `AND`: And
-- `OR`: Or
-
-## `COUNT()` FUNCTION
+## `COUNT()` Function
 
 - Returns the number of input rows that match the condition
-- Note: It does not consider NULL values in the column
+- Note: It does not consider `NULL` values in the column
 - It is better to run it on the Primary Key
 
 ```sql
@@ -78,33 +55,62 @@ SELECT COUNT(DISTINCT colum_name)
 FROM table_name;
 ```
 
-## `LIMIT`
+```sql
+SELECT COUNT(DISTINCT(column_name1, column_name1))
+FROM table_name;
+```
 
-- Limit the number of rows we get from the query
-- A great way to get a quick summary/overview
-- Goes at the end of a query
-- Good use case for tops (top 10, top 50,...)
+## `SELECT WHERE`
+
+- Adding conditions to a `SELECT` statement
+- Filter the results returned from the `SELECT` statement
 
 ```sql
-SELECT *
+SELECT column1, column2,...
 FROM table_name
-LIMIT 50;
+WHERE condition;
 ```
+
+### Comparison Operators
+
+- `=`: Equal
+- `>`: Greater than
+- `<`: Less than
+- `>=`: Greater than or equal
+- `<=`: Less than or equal
+- `!=`: Not equal
+- `<>`: Not equal
+- `AND`: And
+- `OR`: Or
+- `NOT`: Not
 
 ## `ORDER BY`
 
 - Default order of return is by the order in the table
 - To sort the result, use this statement
-- We can order by multiple columns
+- We can order by multiple columns: The same as using `then`
 - The default order is `ASC`
 - In PostgreSQL, it is possible to sort by a column that is not in the SELECT clause
-- This might not be the case with other SQL engines
+  - This might not be the case with other SQL engines
 - It is always better to select the column(s) you want to order by
 
 ```sql
 SELECT column1, column2, column3...
 FROM table_name
 ORDER BY column1 ASC/DESC, column2 ASC/DESC;
+```
+
+## `LIMIT`
+
+- Limit the number of rows we get from the query
+- A great way to get a quick summary/overview
+- Goes at the very end of a query
+- Good use case to use with `ORDER BY` for getting tops and bottoms (top 10, top 50,...)
+
+```sql
+SELECT *
+FROM table_name
+LIMIT 50;
 ```
 
 ## `BETWEEN`
@@ -126,6 +132,7 @@ WHERE column1 => 1 AND column1 <= 100;
 ```
 
 - We can use the `NOT` operator for negation
+- This makes `BETWEEN` become exclusive
 
 ```sql
 SELECT *
@@ -190,4 +197,4 @@ WHERE column1 NOT LIKE `%abc%`;
 ### `ILIKE`
 
 - Specific to PostgreSQL
-- `LIKE` is case-sensitive but `ILIKE` is not case-sensitive
+- `LIKE` is case-sensitive but `ILIKE` is case-insensitive
