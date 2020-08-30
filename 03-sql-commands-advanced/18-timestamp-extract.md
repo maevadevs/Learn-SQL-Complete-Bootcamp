@@ -40,6 +40,23 @@ DATE '2001-09-28' + TIME '03:00'
 /* > Result: TIMESTAMP 2001-09-28:03:00:00 Adds 3 hours */
 ```
 
+## `SHOW` command
+
+- Allows to look into values of runtime parameters for PostgreSQL
+- `SHOW ALL` shows all the parameters
+- `SHOW X` will show the specific `X` parameter
+
+## `NOW()` and `TIMEOFDAY()`
+
+- Allows to get the current timestamp
+- `SELECT NOW()` will return the current timestamp
+- `SELECT TIMEOFDAY()` will return the same information but in a string format
+
+## `CURRENT_DATE` and `CURRENT_TIME`
+
+- Allows to return the current date and the current time with timezone
+- Note that these are not functions
+
 ## Example Using `EXTRACT`
 
 - Casing does not matter but it helps with visualizing the codes
@@ -62,4 +79,26 @@ SELECT
 FROM payment
 GROUP BY total
 ORDER BY sum(amount) DESC;
+```
+
+## `AGE()`
+
+- Calculates and returns the current age given a timestamp
+- Basically calculate the difference in time between the timestamp and `NOW()`
+
+```sql
+SELECT
+  AGE(date_col)
+FROM table_name;
+```
+
+## `TO_CHAR()`
+
+- General function to convert data types to text
+- Useful for timestamp formatting
+
+```sql
+SELECT
+  TO_CHAR(date_col, `mm-dd-yyyy`)
+FROM table_name;
 ```
